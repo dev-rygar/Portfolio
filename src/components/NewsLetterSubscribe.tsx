@@ -34,7 +34,7 @@ export default function NewsletterSubscribe() {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 ">
+    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 mt-4 ">
       <div className="text-center mb-4">
         <h2 className="text-xl font-bold text-gray-800">Stay Connected</h2>
         <p className="text-gray-500 text-sm mt-2">
