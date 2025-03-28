@@ -1,4 +1,3 @@
-import React from "react";
 import { techStackSections } from "../data";
 
 export default function TechStack() {

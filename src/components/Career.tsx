@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { workExperiences, WorkExperience } from "../data";
 import { educationItems, certificationItems } from "../data";
 import SectionList from "./SectionList";
 import CertificateGallery from "./CertificateGallery";
+
+type CertificateItem = {
+  title: string;
+  image: string; // Assuming 'image' is a required property in the CertificateItem type
+  imageData: string;
+  issuer: string;
+};
 
 export default function Career() {
   const [expandedExperiences, setExpandedExperiences] = useState<{
@@ -10,11 +17,8 @@ export default function Career() {
   }>({});
 
   // State for certificate modal
-  const [selectedCertificate, setSelectedCertificate] = useState<{
-    title: string;
-    imageData: string;
-    issuer: string;
-  } | null>(null);
+  const [selectedCertificate, setSelectedCertificate] =
+    useState<CertificateItem | null>(null);
 
   const toggleExpand = (index: number) => {
     setExpandedExperiences((prev) => ({

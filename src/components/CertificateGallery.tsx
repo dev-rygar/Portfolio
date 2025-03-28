@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { Camera, ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useRef } from "react";
+import { Camera } from "lucide-react";
 import { certificates, CertificateItem } from "../certificateConfig";
 
 interface CertificateGalleryProps {
@@ -15,14 +15,16 @@ export default function CertificateGallery({
 }: CertificateGalleryProps) {
   const galleryRef = useRef<HTMLDivElement>(null);
 
+  // Function to open modal and set selected certificate
   const openModal = (certificate: CertificateItem) => {
     setSelectedCertificate(certificate);
   };
 
+  // Function to scroll the gallery left or right
   const scroll = (direction: "left" | "right") => {
     if (galleryRef.current) {
       const { current } = galleryRef;
-      const scrollAmount = current.clientWidth; // Scroll by the width of the gallery
+      const scrollAmount = current.clientWidth;
 
       if (direction === "left") {
         current.scrollBy({ left: -scrollAmount, behavior: "smooth" });

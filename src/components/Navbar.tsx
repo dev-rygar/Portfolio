@@ -1,5 +1,3 @@
-import React from "react";
-
 interface NavbarProps {
   currentSection: string;
   onSectionChange: (section: string) => void;
@@ -9,7 +7,7 @@ export default function Navbar({
   currentSection,
   onSectionChange,
 }: NavbarProps) {
-  const navItems = ["Home", "About", "Experience", "Tools"];
+  const navItems = ["Home", "About", "Experience", "Projects"];
 
   return (
     <nav className="relative top-5 border border-gray-100 shadow-xl flex items-center justify-center w-xs text-sm md:text-md md:w-sm mx-auto *:py-2 *:px-3 rounded-full *:font-medium">
