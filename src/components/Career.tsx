@@ -3,13 +3,7 @@ import { workExperiences, WorkExperience } from "../data";
 import { educationItems, certificationItems } from "../data";
 import SectionList from "./SectionList";
 import CertificateGallery from "./CertificateGallery";
-
-type CertificateItem = {
-  title: string;
-  image: string; // Assuming 'image' is a required property in the CertificateItem type
-  imageData: string;
-  issuer: string;
-};
+import { CertificateItem } from "../certificateConfig"; // Import from certificateConfig
 
 export default function Career() {
   const [expandedExperiences, setExpandedExperiences] = useState<{

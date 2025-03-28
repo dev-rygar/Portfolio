@@ -1,4 +1,4 @@
-export default function SocialLinks({ isCol }) {
+export default function SocialLinks({ isCol = false }) {
   return (
     <>
       {isCol ? (

@@ -12,6 +12,7 @@ import zuittSQL from "./assets/certificates/zuitt_cert_sql.jpg";
 export interface CertificateItem {
   title: string;
   image: string;
+  imageData?: string;
   issuer: string;
   category?: string;
 }

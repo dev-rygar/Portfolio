@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import { Camera } from "lucide-react";
+import { Camera, X } from "lucide-react";
 import { certificates, CertificateItem } from "../certificateConfig";
 
 interface CertificateGalleryProps {
@@ -13,31 +12,19 @@ export default function CertificateGallery({
   selectedCertificate,
   setSelectedCertificate,
 }: CertificateGalleryProps) {
-  const galleryRef = useRef<HTMLDivElement>(null);
-
   // Function to open modal and set selected certificate
   const openModal = (certificate: CertificateItem) => {
     setSelectedCertificate(certificate);
   };
 
-  // Function to scroll the gallery left or right
-  const scroll = (direction: "left" | "right") => {
-    if (galleryRef.current) {
-      const { current } = galleryRef;
-      const scrollAmount = current.clientWidth;
-
-      if (direction === "left") {
-        current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-      } else {
-        current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      }
-    }
+  // Function to close modal
+  const closeModal = () => {
+    setSelectedCertificate(null);
   };
 
   return (
     <div className="relative flex mt-10 justify-center items-center">
       <div
-        ref={galleryRef}
         className="flex overflow-x-auto space-x-4 pb-4 no-scrollbar scroll-smooth"
         style={{
           scrollSnapType: "x mandatory",
@@ -69,6 +56,40 @@ export default function CertificateGallery({
           </div>
         ))}
       </div>
+
+      {/* Modal for selected certificate */}
+      {selectedCertificate && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-xl w-full relative">
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
+            >
+              <X size={24} />
+            </button>
+            <div className="p-6">
+              <img
+                src={selectedCertificate.image}
+                alt={selectedCertificate.title}
+                className="w-full max-h-[70vh] object-contain rounded-lg"
+              />
+              <div className="mt-4 text-center">
+                <h2 className="text-xl font-bold text-gray-800">
+                  {selectedCertificate.title}
+                </h2>
+                <p className="text-gray-600 mt-2">
+                  Issued by: {selectedCertificate.issuer}
+                </p>
+                {selectedCertificate.category && (
+                  <p className="text-gray-500 text-sm mt-1">
+                    Category: {selectedCertificate.category}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
