@@ -1,5 +1,3 @@
-import React from "react";
-
 interface NavbarProps {
   currentSection: string;
   onSectionChange: (section: string) => void;
