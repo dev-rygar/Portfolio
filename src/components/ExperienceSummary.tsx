@@ -5,7 +5,7 @@ export default function ExperienceSummary() {
   const latestExperience = workExperiences[0];
 
   return (
-    <div className="max-w-xl bg-white shadow-lg rounded-xl p-6 border border-gray-100">
+    <div className="max-w-xl md:max-w-[25vw] mb-6 bg-white shadow-lg rounded-xl p-6 border border-gray-100">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold text-gray-800">
           Professional Journey
