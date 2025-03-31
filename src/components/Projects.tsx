@@ -120,11 +120,11 @@ export default function TechStack() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                title: "Devsoft Philippines",
+                title: "Company Website",
                 description:
-                  "I tried to revamp a little bit the website of Devsoft Philippines",
-                link: "https://softdev-six.vercel.app/",
-                github: "https://github.com/dev-rygar",
+                  "I redesigned a professional company website as a design and development exercise. Due to ownership and legal considerations, the live demo is currently disabled. I am in the process of modifying certain details and assets to ensure I can showcase it in my portfolio while respecting intellectual property rights.",
+                link: "",
+                github: "",
               },
               {
                 title: "Backend: Marketplace",
