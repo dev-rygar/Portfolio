@@ -112,9 +112,7 @@ export default function TechStack() {
           <p className="text-gray-600 text-lg max-w-2xl mb-6">
             This section is intended to showcase my latest projects. However,
             due to time constraints, I’m currently featuring two of my older &
-            recent projects that are published on Vercel. This portfolio was
-            created for the Philippine Tech Career Fest on March 29. For a more
-            comprehensive list of my work, feel free to visit my GitHub.
+            recent projects that are published on Vercel.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
