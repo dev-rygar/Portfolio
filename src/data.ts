@@ -72,14 +72,14 @@ export const workExperiences: WorkExperience[] = [
     title: "Freelance Software Developer",
     period: "January 2024 - Present",
     mainBullets: [
-      "Architected robust project repositories with comprehensive GitHub configurations, meticulously crafting .gitignore files, detailed README.md documentation, and comprehensive project setup instructions to streamline onboarding and ensure consistent development practices.",
-      "Transformed design specifications into pixel-perfect, highly reusable React components, demonstrating exceptional skill in translating complex Figma designs into interactive UI elements while rigorously adhering to accessibility standards and design guidelines.",
-      "Engineered optimized development environments by strategically managing project dependencies, configuring sophisticated package.json scripts for start, build, lint, and test processes, and implementing ESLint and Prettier to enforce code quality, consistency, and automated formatting across multiple projects.",
+      "Built and maintained scalable project repositories using Git and GitHub, with structured branching strategies, clear PR workflows, and comprehensive README documentation to support team collaboration and smooth onboarding.",
+      "Translated detailed design specs and Figma mockups into fully responsive, accessible React components, following atomic design principles and ensuring implementation accuracy across platforms and browsers.",
+      "Worked closely with a senior developer to implement consistent UI systems, aligning with accessibility standards and design guidelines to deliver polished user experiences.",
     ],
     additionalBullets: [
-      "Implemented responsive, cross-browser compatible interfaces using advanced Tailwind CSS techniques, ensuring seamless user experiences across diverse devices and screen sizes through meticulous CSS optimization and adaptive design strategies.",
-      "Designed and implemented sophisticated Git workflow strategies, including feature branching models, comprehensive PR and issue templates, and collaborative development processes that significantly enhanced team productivity and code management efficiency.",
-      "Developed comprehensive documentation and onboarding resources, creating clear, detailed guides that accelerate new team member integration and establish standardized development practices across projects.",
+      "Developed responsive, cross-browser compatible layouts using Tailwind CSS, ensuring visual consistency and performance across mobile and desktop devices.",
+      "Created and maintained reusable UI components, improving development speed and consistency across features by applying React best practices and modular design.",
+      "Authored detailed internal documentation and setup guides to standardize development practices and reduce ramp-up time for new contributors.",
     ],
   },
   {
