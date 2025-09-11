@@ -20,7 +20,7 @@ export default function ExperienceSummary() {
           <h3 className="text-lg font-semibold text-gray-700">
             {latestExperience.title}
           </h3>
-          <p className="text-gray-500 text-sm">{latestExperience.period}</p>
+
         </div>
 
         <ul className="text-gray-600 text-sm space-y-2 list-disc pl-5">
