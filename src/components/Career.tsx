@@ -41,7 +41,7 @@ export default function Career() {
                 <h2 className="text-xl md:text-2xl font-semibold">
                   {experience.title}
                 </h2>
-                <h3 className="text-sm text-gray-500">{experience.period}</h3>
+                
               </section>
               <ul className="list-disc pl-6 text-sm md:text-md text-gray-600 space-y-2">
                 {experience.mainBullets.map((bullet, bulletIndex) => (
