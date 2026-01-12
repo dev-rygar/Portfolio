@@ -18,10 +18,10 @@ export default function TechStack() {
       />
       <div className="max-w-5xl mx-auto">
         <header className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
             Technological Expertise Across Diverse Domains
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A Comprehensive Tech Arsenal Powering Innovation and Creativity
           </p>
         </header>
@@ -30,10 +30,10 @@ export default function TechStack() {
           {techStackSections.map((section, index) => (
             <Card
               key={index}
-              className="group hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl border-gray-200"
+              className="group hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl border-border"
             >
               <CardHeader className="flex flex-row items-center space-y-0 gap-4 pb-2">
-                <div className="bg-cyan-100 text-primary p-3 rounded-lg">
+                <div className="bg-primary/20 text-primary p-3 rounded-lg">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -91,12 +91,12 @@ export default function TechStack() {
                     )}
                   </svg>
                 </div>
-                <CardTitle className="text-xl font-semibold text-gray-800">
+                <CardTitle className="text-xl font-semibold text-foreground">
                   {section.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-gray-700">
+                <ul className="space-y-2 text-muted-foreground">
                   {section.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start text-sm">
                       <svg
@@ -119,10 +119,10 @@ export default function TechStack() {
           ))}
         </div>
         <div className="mt-12">
-          <h2 className="text-4xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+          <h2 className="text-4xl md:text-3xl font-bold text-foreground mb-4 leading-tight">
             Project Showcase
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mb-6">
+          <p className="text-muted-foreground text-lg max-w-2xl mb-6">
             This section is intended to showcase my latest projects. However,
             due to time constraints, I’m currently featuring two of my older &
             recent projects that are published on Vercel.
@@ -162,15 +162,15 @@ export default function TechStack() {
             ].map((project, index) => (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-shadow border-gray-200"
+                className="hover:shadow-lg transition-shadow border-border"
               >
                 <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-gray-800">
+                  <CardTitle className="text-xl font-semibold text-foreground">
                     {project.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">{project.description}</p>
+                  <p className="text-muted-foreground">{project.description}</p>
                 </CardContent>
                 <CardFooter className="flex space-x-4">
                   {project.link && (

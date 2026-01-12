@@ -1,30 +1,46 @@
 import { NavLink } from "react-router-dom";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Navbar() {
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Experience", path: "/experience" },
-    { name: "Projects", path: "/projects" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Experience", href: "/career" },
+    { label: "Projects", href: "/projects" },
   ];
 
   return (
-    <nav className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 border border-gray-100 shadow-xl flex items-center justify-center w-xs text-sm md:text-md md:w-sm mx-auto *:py-2 *:px-3 rounded-full *:font-medium bg-white">
-      {navItems.map((item) => (
-        <NavLink
-          key={item.name}
-          to={item.path}
-          className={({ isActive }) => `
-            ${isActive
-              ? "text-primary font-semibold"
-              : "text-gray-600 hover:text-primary"
-            }
-            transition-colors duration-300
-          `}
-        >
-          {item.name}
-        </NavLink>
-      ))}
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex-shrink-0">
+            <NavLink to="/" className="text-xl font-bold text-foreground">
+              John Garry Tan
+            </NavLink>
+          </div>
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.label}
+                  to={item.href}
+                  className={({ isActive }) =>
+                    `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isActive
+                      ? "text-primary bg-accent"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+              <div className="ml-4">
+                <ModeToggle />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
   );
 }

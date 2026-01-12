@@ -21,11 +21,11 @@ export default function About() {
         </div>
 
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-800 md:text-5xl w-[16ch]">
+          <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl w-[16ch]">
             I’m John Garry Tan. Innovating from Antipolo City, crafting the
             future today.
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600">
+          <div className="mt-6 space-y-7 text-base text-muted-foreground">
             <p>
               As a Full-Stack Web Developer, I prioritize problem-solving and
               strategic thinking over focusing solely on a specific tech stack
@@ -66,7 +66,7 @@ export default function About() {
           <SocialLinks isCol={true} />
           <a
             href="mailto:johngarry.tan@gmail.com"
-            className="mt-8 border-t border-gray-300 pt-8 flex items-center gap-2"
+            className="mt-8 border-t border-border pt-8 flex items-center gap-2 text-foreground hover:text-primary transition-colors"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

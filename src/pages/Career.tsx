@@ -36,11 +36,11 @@ export default function Career() {
         description="Explore John Garry Tan's professional journey, work experience, education, and certifications."
       />
       <div>
-        <h1 className="text-3xl font-bold tracking-tight text-gray-800 md:text-5xl md:w-[25ch]">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-5xl md:w-[25ch]">
           Crafting code, driving innovation, and shaping solutions across
           industries.
         </h1>
-        <h2 className="mt-4 text-gray-400 text-xs md:text-sm ">
+        <h2 className="mt-4 text-muted-foreground text-xs md:text-sm ">
           Work History - We listen and we don't judge
         </h2>
         <section className="mt-10 px-4 flex flex-col w-full space-y-8">
@@ -52,7 +52,7 @@ export default function Career() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <ul className="list-disc pl-6 text-sm md:text-md text-gray-600 space-y-2">
+                <ul className="list-disc pl-6 text-sm md:text-md text-muted-foreground space-y-2">
                   {experience.mainBullets.map((bullet, bulletIndex) => (
                     <li key={bulletIndex}>{bullet}</li>
                   ))}

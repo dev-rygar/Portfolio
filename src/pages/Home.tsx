@@ -26,13 +26,13 @@ export default function Home() {
         <header>
           <h1
             id="bio-heading"
-            className="text-xl md:text-5xl font-bold text-gray-900 md:w-[24ch] text-left md:mr-4"
+            className="text-xl md:text-5xl font-bold text-foreground md:w-[24ch] text-left md:mr-4"
           >
             Full Stack Developer |{" "}
             <span className="font-medium">UX & UI Designer</span>
           </h1>
         </header>
-        <article className="max-w-2xl text-lg leading-relaxed text-gray-700 *:mb-5 w-[30ch] md:w-[70ch]">
+        <article className="max-w-2xl text-lg leading-relaxed text-muted-foreground *:mb-5 w-[30ch] md:w-[70ch]">
           <p>
             Hello, I’m <strong>John Garry Tan</strong>! I’m a problem solver at
             heart, passionate about building intuitive and impactful digital
@@ -52,10 +52,10 @@ export default function Home() {
       </section>
 
       <section className="text-center mt-4 ">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+        <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
           A Peek Into My World
         </h2>
-        <p className="text-gray-600 mt-2">
+        <p className="text-muted-foreground mt-2">
           Here are some things that inspire me, my hobbies, and what I love!
         </p>
       </section>
@@ -85,7 +85,7 @@ export default function Home() {
         flex-shrink-0 
         w-64 
         h-80 
-        bg-gray-300 
+        bg-muted 
         rounded-lg 
         shadow-lg 
         overflow-hidden 

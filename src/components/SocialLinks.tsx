@@ -3,7 +3,7 @@ export default function SocialLinks({ isCol = false }) {
     <>
       {isCol ? (
         <div className={`flex space-x-4 flex-col space-y-2 *:text-sm`}>
-          <div className="flex items-center *:mr-2 *:font-medium *:text-gray-900">
+          <div className="flex items-center *:mr-2 *:font-medium *:text-foreground hover:*:text-primary transition-colors">
             <a
               href="https://github.com/dev-rygar"
               target="_blank"
@@ -23,7 +23,7 @@ export default function SocialLinks({ isCol = false }) {
             </a>
             <p>Github</p>
           </div>
-          <div className="flex items-center *:mr-2 *:font-medium *:text-gray-900">
+          <div className="flex items-center *:mr-2 *:font-medium *:text-foreground hover:*:text-primary transition-colors">
             <a
               href="https://www.linkedin.com/in/tjgarry/"
               target="_blank"
@@ -39,7 +39,7 @@ export default function SocialLinks({ isCol = false }) {
             </a>
             <p>LinkedIn</p>
           </div>
-          <div className="flex items-center *:mr-2 *:font-medium *:text-gray-800">
+          <div className="flex items-center *:mr-2 *:font-medium *:text-foreground hover:*:text-primary transition-colors">
             <a
               href="https://www.codewars.com/users/dev-rygar/completed"
               target="_blank"
