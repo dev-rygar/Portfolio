@@ -132,6 +132,14 @@ export default function TechStack() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
+                title: "Mint Supply Company – E-Commerce Platform",
+                description:
+                  "Delivered a modern, mobile-responsive e-commerce platform with scalable architecture, SEO optimization, and dynamic product integration. Built with React, Next.js, Tailwind, and Supabase.",
+                link: "https://mintsupplycompany.com",
+                linkText: "Visit Site",
+                github: "",
+              },
+              {
                 title: "DevSoftPh",
                 description: "Specifically for DevSoftPh Interview",
                 link: "https://softdev-six.vercel.app/",
@@ -181,7 +189,7 @@ export default function TechStack() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Live Demo
+                        {project.linkText || "Live Demo"}
                       </a>
                     </Button>
                   )}

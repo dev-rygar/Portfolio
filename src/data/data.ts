@@ -69,6 +69,18 @@ export const techStackSections: TechCategory[] = [
 
 export const workExperiences: WorkExperience[] = [
   {
+    title: "Amazon VA – Product Researcher (with IT & Development Support) | Freelance",
+    period: "Feb 2025 – Aug 2025",
+    mainBullets: [
+      "Developed a B2B distribution website (Next.js + Supabase) that increased scalability and SEO visibility for client operations.",
+      "Configured Google Workspace accounts, custom emails, and IT workflows, supporting distributed teams.",
+      "Conducted Amazon product research using SellerAmp, Keepa, and SmartScout, analyzing profitability, competition, and sourcing options.",
+    ],
+    additionalBullets: [
+      "Managed supplier communication and deal negotiations, maintaining structured product records for team use.",
+    ],
+  },
+  {
     title: "Freelance Software Developer",
     period: "January 2024 - Present",
     mainBullets: [
