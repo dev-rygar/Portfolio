@@ -9,12 +9,13 @@ import ExperienceSummary from "../components/ExperienceSummary";
 import NewsletterSubscribe from "../components/NewsLetterSubscribe";
 
 import SEO from "../components/SEO";
+import PageTransition from "../components/PageTransition";
 
 export default function Home() {
   const images = [imageOne, imageTwo, imageThree, imageFour, imageFive];
 
   return (
-    <div className="pb-12">
+    <PageTransition className="pb-12">
       <SEO
         title="Home | John Garry Tan"
         description="Welcome to the portfolio of John Garry Tan, a Full Stack Developer and UX/UI Designer passionate about building intuitive digital experiences."
@@ -24,30 +25,70 @@ export default function Home() {
         className="mt-20 mb-6 md:mt-25 *:my-4 flex flex-col items-center text-center"
       >
         <header>
-          <h1
+          <motion.h1
             id="bio-heading"
-            className="text-4xl md:text-6xl font-bold text-foreground"
+            className="text-4xl md:text-6xl font-bold text-foreground overflow-hidden"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1,
+                  delayChildren: 0.3,
+                },
+              },
+            }}
           >
-            Full Stack Developer |{" "}
-            <span className="font-medium text-muted-foreground">
+            {["Full", "Stack", "Developer", "|"].map((word, i) => (
+              <motion.span
+                key={i}
+                className="inline-block mr-2 md:mr-4"
+                variants={{
+                  hidden: { y: "100%" },
+                  visible: {
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 20,
+                    },
+                  },
+                }}
+              >
+                {word}
+              </motion.span>
+            ))}
+            <motion.span
+              className="font-medium text-muted-foreground inline-block"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: 0.8, duration: 0.5 },
+                },
+              }}
+            >
               UX & UI Designer
-            </span>
-          </h1>
+            </motion.span>
+          </motion.h1>
         </header>
         <article className="max-w-2xl text-lg leading-relaxed text-muted-foreground *:mb-5">
           <p>
             Hello, I’m <strong>John Garry Tan</strong>! I’m a problem solver at
             heart, passionate about building intuitive and impactful digital
             experiences. As a freelance full-stack developer, I focus on
-            crafting web solutions—lately, with React.
+            crafting web solutions lately, with React.
           </p>
           <p>
             My goal is to design apps that feel effortless for everyone, from
             tech-savvy users to seniors and beginners. I believe accessibility
-            goes beyond just the interface—it’s also about building smart,
+            goes beyond just the interface it’s also about building smart,
             efficient back-end logic that ensures a seamless and
             frustration-free experience. Always learning, always
-            building—excited for what’s next!
+            building excited for what’s next!
           </p>
         </article>
         <div className="flex justify-center w-full">
@@ -109,6 +150,6 @@ export default function Home() {
         <ExperienceSummary />
         <NewsletterSubscribe />
       </section>
-    </div>
+    </PageTransition>
   );
 }

@@ -12,6 +12,7 @@ import {
   CardTitle,
 } from "../components/ui/card";
 import SEO from "../components/SEO";
+import PageTransition from "../components/PageTransition";
 
 export default function Career() {
   const [expandedExperiences, setExpandedExperiences] = useState<{
@@ -30,7 +31,7 @@ export default function Career() {
   };
 
   return (
-    <div className="mx-auto mt-16 pb-12 flex flex-col px-4">
+    <PageTransition className="mx-auto mt-16 pb-12 flex flex-col px-4">
       <SEO
         title="Experience | John Garry Tan"
         description="Explore John Garry Tan's professional journey, work experience, education, and certifications."
@@ -82,6 +83,6 @@ export default function Career() {
           setSelectedCertificate={setSelectedCertificate}
         />
       </div>
-    </div>
+    </PageTransition>
   );
 }

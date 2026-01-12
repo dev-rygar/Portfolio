@@ -8,10 +8,11 @@ import {
   CardTitle,
 } from "../components/ui/card";
 import SEO from "../components/SEO";
+import PageTransition from "../components/PageTransition";
 
 export default function TechStack() {
   return (
-    <div className="container mx-auto px-4 py-16">
+    <PageTransition className="container mx-auto px-4 py-16">
       <SEO
         title="Projects | John Garry Tan"
         description="Discover the technological expertise and project showcase of John Garry Tan."
@@ -205,6 +206,6 @@ export default function TechStack() {
           </div>
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 }

@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import "./index.css";
 import Navbar from "./components/Navbar";
 
@@ -19,17 +20,19 @@ function App() {
         <Suspense
           fallback={
             <div className="flex justify-center items-center h-screen">
-              <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-cyan-500"></div>
+              <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-primary"></div>
             </div>
           }
         >
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/experience" element={<Career />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/experience" element={<Career />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </AnimatePresence>
         </Suspense>
       </div>
     </>

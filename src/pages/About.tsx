@@ -1,10 +1,11 @@
 import SocialLinks from "../components/SocialLinks";
 import profileImage from "../assets/profile.jpeg";
 import SEO from "../components/SEO";
+import PageTransition from "../components/PageTransition";
 
 export default function About() {
   return (
-    <div className="container mx-auto mt-16 sm:mt-32 px-6 pb-12 ">
+    <PageTransition className="container mx-auto mt-16 sm:mt-32 px-6 pb-12">
       <SEO
         title="About | John Garry Tan"
         description="Learn more about John Garry Tan, his background, hobbies, and passion for technology and design."
@@ -34,7 +35,7 @@ export default function About() {
               problem, for me, starts with understanding the task at hand,
               identifying the right people to collaborate with, and figuring out
               the best approach. It's like planning a construction
-              project—gathering the necessary resources and planning the steps,
+              project gathering the necessary resources and planning the steps,
               rather than relying on just one tool.
             </p>
             <p>
@@ -44,7 +45,7 @@ export default function About() {
               believe, are key to building successful applications and managing
               projects effectively. I’ve learned to approach software
               development from a holistic perspective, considering the bigger
-              picture—integrating agile methodologies and working with
+              picture integrating agile methodologies and working with
               cross-functional teams to drive results.
             </p>
             <p>
@@ -86,6 +87,6 @@ export default function About() {
           </a>
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 }
