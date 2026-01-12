@@ -12,10 +12,8 @@ import {
   Calendar,
   GraduationCap,
   Award,
-  Briefcase,
   ChevronDown,
   ChevronUp,
-  MapPin
 } from "lucide-react";
 
 // Animation Variants (Consistent with Projects.tsx)

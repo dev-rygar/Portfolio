@@ -2,7 +2,7 @@ import SocialLinks from "../components/SocialLinks";
 import profileImage from "../assets/profile.jpeg";
 import SEO from "../components/SEO";
 import { motion } from "framer-motion";
-import { Quote, User, Code2, Heart, Mail } from "lucide-react";
+import { User, Code2, Heart, Mail } from "lucide-react";
 
 // Animation Variants (Consistent with Projects/Career)
 const containerVariants = {
