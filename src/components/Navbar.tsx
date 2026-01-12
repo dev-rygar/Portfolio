@@ -16,8 +16,8 @@ export default function Navbar() {
           to={item.path}
           className={({ isActive }) => `
             ${isActive
-              ? "text-cyan-700 font-semibold"
-              : "text-gray-600 hover:text-cyan-700"
+              ? "text-primary font-semibold"
+              : "text-gray-600 hover:text-primary"
             }
             transition-colors duration-300
           `}

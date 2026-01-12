@@ -1,9 +1,14 @@
 import SocialLinks from "../components/SocialLinks";
 import profileImage from "../assets/profile.jpeg";
+import SEO from "../components/SEO";
 
 export default function About() {
   return (
     <div className="container mx-auto mt-16 sm:mt-32 px-6 pb-12 ">
+      <SEO
+        title="About | John Garry Tan"
+        description="Learn more about John Garry Tan, his background, hobbies, and passion for technology and design."
+      />
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
         <div className="lg:pl-20">
           <div className="max-w-xs px-2.5 lg:max-w-none">

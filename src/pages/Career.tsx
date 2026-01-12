@@ -4,6 +4,14 @@ import { educationItems, certificationItems } from "../data/data";
 import SectionList from "../components/SectionList";
 import CertificateGallery from "../components/CertificateGallery";
 import { CertificateItem } from "../data/certificateConfig"; // Import from certificateConfig
+import { Button } from "../components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import SEO from "../components/SEO";
 
 export default function Career() {
   const [expandedExperiences, setExpandedExperiences] = useState<{
@@ -23,6 +31,10 @@ export default function Career() {
 
   return (
     <div className="mx-auto mt-16 pb-12 flex flex-col px-4">
+      <SEO
+        title="Experience | John Garry Tan"
+        description="Explore John Garry Tan's professional journey, work experience, education, and certifications."
+      />
       <div>
         <h1 className="text-3xl font-bold tracking-tight text-gray-800 md:text-5xl md:w-[25ch]">
           Crafting code, driving innovation, and shaping solutions across
@@ -33,34 +45,33 @@ export default function Career() {
         </h2>
         <section className="mt-10 px-4 flex flex-col w-full space-y-8">
           {workExperiences.map((experience: WorkExperience, index: number) => (
-            <article
-              key={index}
-              className="space-y-4 border-l-2 border-gray-200 pl-4"
-            >
-              <section className="space-y-1">
-                <h2 className="text-xl md:text-2xl font-semibold">
+            <Card key={index} className="shadow-sm border-l-4 border-l-primary/50">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xl md:text-2xl font-semibold">
                   {experience.title}
-                </h2>
-
-              </section>
-              <ul className="list-disc pl-6 text-sm md:text-md text-gray-600 space-y-2">
-                {experience.mainBullets.map((bullet, bulletIndex) => (
-                  <li key={bulletIndex}>{bullet}</li>
-                ))}
-                {expandedExperiences[index] &&
-                  experience.additionalBullets.map((bullet, bulletIndex) => (
-                    <li key={`additional-${bulletIndex}`}>{bullet}</li>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="list-disc pl-6 text-sm md:text-md text-gray-600 space-y-2">
+                  {experience.mainBullets.map((bullet, bulletIndex) => (
+                    <li key={bulletIndex}>{bullet}</li>
                   ))}
-              </ul>
-              {experience.additionalBullets.length > 0 && (
-                <button
-                  onClick={() => toggleExpand(index)}
-                  className="text-cyan-600 hover:text-cyan-800 transition-colors duration-300 text-sm mt-2 font-medium"
-                >
-                  {expandedExperiences[index] ? "Show Less" : "Read More"}
-                </button>
-              )}
-            </article>
+                  {expandedExperiences[index] &&
+                    experience.additionalBullets.map((bullet, bulletIndex) => (
+                      <li key={`additional-${bulletIndex}`}>{bullet}</li>
+                    ))}
+                </ul>
+                {experience.additionalBullets.length > 0 && (
+                  <Button
+                    variant="ghost"
+                    onClick={() => toggleExpand(index)}
+                    className="text-primary hover:text-primary/80 hover:bg-transparent p-0 h-auto font-medium"
+                  >
+                    {expandedExperiences[index] ? "Show Less" : "Read More"}
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
           ))}
         </section>
 

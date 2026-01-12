@@ -8,11 +8,17 @@ import SocialLinks from "../components/SocialLinks";
 import ExperienceSummary from "../components/ExperienceSummary";
 import NewsletterSubscribe from "../components/NewsLetterSubscribe";
 
+import SEO from "../components/SEO";
+
 export default function Home() {
   const images = [imageOne, imageTwo, imageThree, imageFour, imageFive];
 
   return (
     <div className="pb-12">
+      <SEO
+        title="Home | John Garry Tan"
+        description="Welcome to the portfolio of John Garry Tan, a Full Stack Developer and UX/UI Designer passionate about building intuitive digital experiences."
+      />
       <section
         aria-labelledby="bio-heading"
         className="mt-20 mb-6 md:mt-25 *:my-4"

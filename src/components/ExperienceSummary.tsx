@@ -1,26 +1,24 @@
 import { workExperiences } from "../data/data";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 export default function ExperienceSummary() {
   // Get the most recent work experience
   const latestExperience = workExperiences[0];
 
   return (
-    <div className="max-w-xl md:max-w-[25vw] mb-6 bg-white shadow-lg rounded-xl p-6 border border-gray-100">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold text-gray-800">
+    <Card className="max-w-xl md:max-w-[25vw] mb-6 shadow-lg rounded-xl border-gray-100">
+      <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
+        <CardTitle className="text-xl font-bold text-gray-800">
           Professional Journey
-        </h2>
-        <span className="text-cyan-600 font-medium text-sm flex items-center">
-          Latest Role
-        </span>
-      </div>
+        </CardTitle>
+        <span className="text-primary font-medium text-sm">Latest Role</span>
+      </CardHeader>
 
-      <div className="space-y-4">
+      <CardContent className="space-y-4">
         <div className="border-b pb-4">
           <h3 className="text-lg font-semibold text-gray-700">
             {latestExperience.title}
           </h3>
-
         </div>
 
         <ul className="text-gray-600 text-sm space-y-2 list-disc pl-5">
@@ -35,7 +33,7 @@ export default function ExperienceSummary() {
             navbar to see full details
           </p>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }
