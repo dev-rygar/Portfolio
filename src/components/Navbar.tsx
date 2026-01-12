@@ -10,7 +10,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 flex items-center gap-1 p-2 rounded-full border border-border bg-background/80 shadow-lg backdrop-blur-md">
+    <nav className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 flex items-center gap-1 p-2 rounded-full border border-border bg-background/80 shadow-lg backdrop-blur-md max-w-[95vw] overflow-x-auto no-scrollbar">
       {navItems.map((item) => (
         <NavLink
           key={item.label}

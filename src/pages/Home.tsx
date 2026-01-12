@@ -6,7 +6,7 @@ import imageFour from "../assets/4.jpg";
 import imageFive from "../assets/5.jpg";
 import SocialLinks from "../components/SocialLinks";
 import ExperienceSummary from "../components/ExperienceSummary";
-import NewsletterSubscribe from "../components/NewsLetterSubscribe";
+import WorkWithMe from "../components/WorkWithMe";
 
 import SEO from "../components/SEO";
 import PageTransition from "../components/PageTransition";
@@ -148,7 +148,7 @@ export default function Home() {
       </div>
       <section className="mt-12 pb-6 flex flex-col md:flex-row justify-start items-start w-full *:mx-4">
         <ExperienceSummary />
-        <NewsletterSubscribe />
+        <WorkWithMe />
       </section>
     </PageTransition>
   );

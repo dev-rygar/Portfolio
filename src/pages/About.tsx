@@ -22,7 +22,7 @@ export default function About() {
         </div>
 
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl w-[16ch]">
+          <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl md:w-[16ch]">
             I’m John Garry Tan. Innovating from Antipolo City, crafting the
             future today.
           </h1>
