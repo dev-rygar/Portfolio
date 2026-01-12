@@ -21,18 +21,20 @@ export default function Home() {
       />
       <section
         aria-labelledby="bio-heading"
-        className="mt-20 mb-6 md:mt-25 *:my-4"
+        className="mt-20 mb-6 md:mt-25 *:my-4 flex flex-col items-center text-center"
       >
         <header>
           <h1
             id="bio-heading"
-            className="text-xl md:text-5xl font-bold text-foreground md:w-[24ch] text-left md:mr-4"
+            className="text-4xl md:text-6xl font-bold text-foreground"
           >
             Full Stack Developer |{" "}
-            <span className="font-medium">UX & UI Designer</span>
+            <span className="font-medium text-muted-foreground">
+              UX & UI Designer
+            </span>
           </h1>
         </header>
-        <article className="max-w-2xl text-lg leading-relaxed text-muted-foreground *:mb-5 w-[30ch] md:w-[70ch]">
+        <article className="max-w-2xl text-lg leading-relaxed text-muted-foreground *:mb-5">
           <p>
             Hello, I’m <strong>John Garry Tan</strong>! I’m a problem solver at
             heart, passionate about building intuitive and impactful digital
@@ -48,7 +50,9 @@ export default function Home() {
             building—excited for what’s next!
           </p>
         </article>
-        <SocialLinks isCol={false} />
+        <div className="flex justify-center w-full">
+          <SocialLinks isCol={false} />
+        </div>
       </section>
 
       <section className="text-center mt-4 ">
@@ -72,9 +76,10 @@ export default function Home() {
               y: 0,
             }}
             transition={{
-              duration: 0.6,
-              delay: index * 0.2,
-              ease: "easeOut",
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+              delay: index * 0.1,
             }}
             whileHover={{
               scale: 1.05,

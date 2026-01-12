@@ -47,6 +47,7 @@ export default function SocialLinks({ isCol = false }) {
             >
               <svg
                 className="h-6 w-6 md:h-8 md:w-8"
+                fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
                 y="0px"
@@ -101,6 +102,7 @@ export default function SocialLinks({ isCol = false }) {
           >
             <svg
               className="h-6 w-6 md:h-8 md:w-8"
+              fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
               y="0px"

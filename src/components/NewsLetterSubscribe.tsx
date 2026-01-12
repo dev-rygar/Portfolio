@@ -34,10 +34,10 @@ export default function NewsletterSubscribe() {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100">
+    <div className="bg-card shadow-lg rounded-xl p-6 border border-border">
       <div className="text-center mb-4">
-        <h2 className="text-xl font-bold text-gray-800">Stay Connected</h2>
-        <p className="text-gray-500 text-sm mt-2">
+        <h2 className="text-xl font-bold text-foreground">Stay Connected</h2>
+        <p className="text-muted-foreground text-sm mt-2">
           Subscribe to get updates, insights, and exclusive content
         </p>
       </div>
@@ -52,11 +52,10 @@ export default function NewsletterSubscribe() {
               setSubscriptionStatus("idle");
             }}
             placeholder="Enter your email address"
-            className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-              subscriptionStatus === "error"
-                ? "border-red-500 focus:ring-red-300"
-                : "border-gray-300 focus:ring-cyan-300"
-            }`}
+            className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 bg-background text-foreground ${subscriptionStatus === "error"
+              ? "border-destructive focus:ring-destructive/30"
+              : "border-input focus:ring-ring/30"
+              }`}
             required
           />
           {subscriptionStatus === "error" && (
@@ -69,11 +68,10 @@ export default function NewsletterSubscribe() {
         <button
           type="submit"
           disabled={subscriptionStatus === "success"}
-          className={`w-full py-2 rounded-md text-white font-medium flex items-center justify-center transition-colors duration-300 ${
-            subscriptionStatus === "success"
-              ? "bg-green-500 hover:bg-green-600"
-              : "bg-cyan-600 hover:bg-cyan-700 active:bg-cyan-800"
-          } ${subscriptionStatus === "success" ? "cursor-not-allowed" : ""}`}
+          className={`w-full py-2 rounded-md text-primary-foreground font-medium flex items-center justify-center transition-colors duration-300 ${subscriptionStatus === "success"
+            ? "bg-green-600 hover:bg-green-700"
+            : "bg-primary hover:bg-primary/90 active:bg-primary/80"
+            } ${subscriptionStatus === "success" ? "cursor-not-allowed" : ""}`}
         >
           {subscriptionStatus === "success" ? (
             <>
