@@ -1,4 +1,4 @@
-import SocialLinks from "./SocialLinks";
+import SocialLinks from "../components/SocialLinks";
 import profileImage from "../assets/profile.jpeg";
 
 export default function About() {

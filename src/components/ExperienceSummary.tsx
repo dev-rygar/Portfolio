@@ -1,4 +1,4 @@
-import { workExperiences } from "../data";
+import { workExperiences } from "../data/data";
 
 export default function ExperienceSummary() {
   // Get the most recent work experience

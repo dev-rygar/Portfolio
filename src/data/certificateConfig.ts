@@ -1,13 +1,13 @@
-import ciitUxDesign from "./assets/certificates/ciit_cert.jpg";
-import googleUxFoundation from "./assets/certificates/google_cert_foundation_ux.jpg";
-import uxDesignProcesss from "./assets/certificates/google_cert_ux_design_processjpg.jpg";
-import metaFrontEnd from "./assets/certificates/meta_cert_intro_frontend.jpg";
-import metaBackEnd from "./assets/certificates/meta_cert_intro_backend.jpg";
-import zuittFrontend from "./assets/certificates/zuitt_cert_front-end.jpg";
-import zuittBackend from "./assets/certificates/zuitt_cert_backend.jpg";
-import zuittFullstack from "./assets/certificates/zuitt_cert_fullstack.jpg";
-import zuittJava from "./assets/certificates/zuitt_cert_java.jpg";
-import zuittSQL from "./assets/certificates/zuitt_cert_sql.jpg";
+import ciitUxDesign from "../assets/certificates/ciit_cert.jpg";
+import googleUxFoundation from "../assets/certificates/google_cert_foundation_ux.jpg";
+import uxDesignProcesss from "../assets/certificates/google_cert_ux_design_processjpg.jpg";
+import metaFrontEnd from "../assets/certificates/meta_cert_intro_frontend.jpg";
+import metaBackEnd from "../assets/certificates/meta_cert_intro_backend.jpg";
+import zuittFrontend from "../assets/certificates/zuitt_cert_front-end.jpg";
+import zuittBackend from "../assets/certificates/zuitt_cert_backend.jpg";
+import zuittFullstack from "../assets/certificates/zuitt_cert_fullstack.jpg";
+import zuittJava from "../assets/certificates/zuitt_cert_java.jpg";
+import zuittSQL from "../assets/certificates/zuitt_cert_sql.jpg";
 
 export interface CertificateItem {
   title: string;

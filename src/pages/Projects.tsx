@@ -1,4 +1,4 @@
-import { techStackSections } from "../data";
+import { techStackSections } from "../data/data";
 
 export default function TechStack() {
   return (

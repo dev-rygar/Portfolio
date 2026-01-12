@@ -1,38 +1,21 @@
-import { useState, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import "./index.css";
 import Navbar from "./components/Navbar";
 
 // Lazy load components
-const Home = lazy(() => import("./components/Home"));
-const About = lazy(() => import("./components/About"));
-const Career = lazy(() => import("./components/Career"));
-const Projects = lazy(() => import("./components/Projects"));
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Career = lazy(() => import("./pages/Career"));
+const Projects = lazy(() => import("./pages/Projects"));
 
 function App() {
-  const [currentSection, setCurrentSection] = useState<string>("Home");
-
-  const renderSection = () => {
-    switch (currentSection) {
-      case "Home":
-        return <Home />;
-      case "About":
-        return <About />;
-      case "Experience":
-        return <Career />;
-      case "Projects":
-        return <Projects />;
-      default:
-        return <Home />;
-    }
-  };
+  const location = useLocation();
 
   return (
     <>
       <div>
-        <Navbar
-          currentSection={currentSection}
-          onSectionChange={setCurrentSection}
-        />
+        <Navbar />
         <Suspense
           fallback={
             <div className="flex justify-center items-center h-screen">
@@ -40,7 +23,13 @@ function App() {
             </div>
           }
         >
-          {renderSection()}
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/experience" element={<Career />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
         </Suspense>
       </div>
     </>

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { workExperiences, WorkExperience } from "../data";
-import { educationItems, certificationItems } from "../data";
-import SectionList from "./SectionList";
-import CertificateGallery from "./CertificateGallery";
-import { CertificateItem } from "../certificateConfig"; // Import from certificateConfig
+import { workExperiences, WorkExperience } from "../data/data";
+import { educationItems, certificationItems } from "../data/data";
+import SectionList from "../components/SectionList";
+import CertificateGallery from "../components/CertificateGallery";
+import { CertificateItem } from "../data/certificateConfig"; // Import from certificateConfig
 
 export default function Career() {
   const [expandedExperiences, setExpandedExperiences] = useState<{
@@ -41,7 +41,7 @@ export default function Career() {
                 <h2 className="text-xl md:text-2xl font-semibold">
                   {experience.title}
                 </h2>
-                
+
               </section>
               <ul className="list-disc pl-6 text-sm md:text-md text-gray-600 space-y-2">
                 {experience.mainBullets.map((bullet, bulletIndex) => (

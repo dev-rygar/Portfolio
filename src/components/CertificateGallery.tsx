@@ -1,5 +1,5 @@
 import { Camera, X } from "lucide-react";
-import { certificates, CertificateItem } from "../certificateConfig";
+import { certificates, CertificateItem } from "../data/certificateConfig";
 
 interface CertificateGalleryProps {
   selectedCertificate: CertificateItem | null;

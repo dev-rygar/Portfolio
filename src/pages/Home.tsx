@@ -4,9 +4,9 @@ import imageTwo from "../assets/2.jpg";
 import imageThree from "../assets/3a.jpg";
 import imageFour from "../assets/4.jpg";
 import imageFive from "../assets/5.jpg";
-import SocialLinks from "./SocialLinks";
-import ExperienceSummary from "./ExperienceSummary";
-import NewsletterSubscribe from "./NewsLetterSubscribe";
+import SocialLinks from "../components/SocialLinks";
+import ExperienceSummary from "../components/ExperienceSummary";
+import NewsletterSubscribe from "../components/NewsLetterSubscribe";
 
 export default function Home() {
   const images = [imageOne, imageTwo, imageThree, imageFour, imageFive];
