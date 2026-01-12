@@ -1,219 +1,236 @@
 import { techStackSections } from "../data/data";
 import { Button } from "../components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
 import SEO from "../components/SEO";
-import PageTransition from "../components/PageTransition";
+import { ExternalLink, Github, FolderGit2, Layers, Code2, Database, Layout, PenTool, Shield, Wrench } from "lucide-react";
+import { motion } from "framer-motion";
 
-export default function TechStack() {
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+    },
+  },
+};
+
+export default function Projects() {
+  const projects = [
+    {
+      title: "Mint Supply Company",
+      category: "E-Commerce Platform",
+      description:
+        "A high-performance B2B distribution platform. Features scalable inventory management, advanced SEO architecture, and seamless product integration.",
+      tags: ["Next.js", "React", "Supabase", "TailwindCSS"],
+      link: "https://mintsupplycompany.com",
+      linkText: "Visit Live Site",
+      github: "",
+      featured: true,
+      gradient: "from-emerald-500/20 to-teal-500/20",
+      border: "hover:border-emerald-500/50",
+    },
+    {
+      title: "Marketplace API",
+      category: "Backend Architecture",
+      description:
+        "Robust RESTful API supporting a multi-vendor marketplace. Implements JWT authentication, complex product CRUD ops, and secure order processing.",
+      tags: ["Node.js", "Express", "MongoDB", "JWT"],
+      link: "https://github.com/dev-rygar/Marketplace",
+      github: "https://github.com/dev-rygar/Marketplace",
+      gradient: "from-blue-500/20 to-indigo-500/20",
+      border: "hover:border-blue-500/50",
+    },
+    {
+      title: "Marketplace UI",
+      category: "Frontend Application",
+      description:
+        "Responsive consumer interface for the marketplace ecosystem. Focuses on intuitive UX, component reusability, and state management.",
+      tags: ["React", "Vite", "Tailwind", "Axios"],
+      link: "https://marketplace-garry-wheat.vercel.app/",
+      github: "https://github.com/dev-rygar/Marketplace",
+      gradient: "from-purple-500/20 to-pink-500/20",
+      border: "hover:border-purple-500/50",
+    },
+    {
+      title: "Owtentik",
+      category: "UI/UX Prototype",
+      description:
+        "High-fidelity mobile app prototype. Demonstrates a user-centric Agile design process, from wireframing to interactive prototyping.",
+      tags: ["Figma", "Prototyping", "Design System"],
+      link: "https://www.figma.com/design/s0POc9jM6zZXp62X8qJU5V/Awtentik%2FOwtentik-App?node-id=0-1&t=bydz8MM30kwcJbvG-1",
+      linkText: "View Prototype",
+      github: "",
+      gradient: "from-orange-500/20 to-red-500/20",
+      border: "hover:border-orange-500/50",
+    },
+    {
+      title: "DevSoftPh Assessment",
+      category: "Technical Assessment",
+      description: "Code challenge submission demonstrating clean architecture, rapid development, and best practices in React.",
+      tags: ["React", "Vite", "Clean Code"],
+      link: "https://softdev-six.vercel.app/",
+      github: "",
+      gradient: "from-gray-500/20 to-slate-500/20",
+      border: "hover:border-slate-500/50",
+    },
+  ];
+
+  const getTechIcon = (index: number) => {
+    const icons = [Code2, Layout, Database, Shield, Wrench, Layers, PenTool, FolderGit2];
+    const Icon = icons[index % icons.length];
+    return <Icon className="h-5 w-5 mb-2 text-primary" />;
+  };
+
   return (
-    <PageTransition className="container mx-auto px-4 py-16">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen px-6 py-24 md:py-32 max-w-7xl mx-auto"
+    >
       <SEO
         title="Projects | John Garry Tan"
-        description="Discover the technological expertise and project showcase of John Garry Tan."
+        description="A curated showcase of high-impact web development projects and technical skills."
       />
-      <div className="max-w-5xl mx-auto">
-        <header className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-            Technological Expertise Across Diverse Domains
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A Comprehensive Tech Arsenal Powering Innovation and Creativity
-          </p>
-        </header>
 
-        <div className="grid md:grid-cols-3 gap-6">
+      {/* Hero Header */}
+      <motion.div variants={itemVariants} className="mb-24 space-y-6">
+        <div className="flex items-center gap-3 text-primary font-medium tracking-wide text-sm uppercase">
+          <span className="w-8 h-[2px] bg-primary"></span>
+          Project Portfolio
+        </div>
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground max-w-4xl">
+          Turning complex problems into <br className="hidden md:block" />
+          <span className="text-primary">
+            elegant solutions.
+          </span>
+        </h1>
+        <p className="text-muted-foreground text-xl max-w-2xl leading-relaxed">
+          My work spans full-stack applications, scalable backend systems, and intuitive user interfaces. Each project represents a unique challenge solved with modern code.
+        </p>
+      </motion.div>
+
+      {/* Featured Project Showcase (Bento Grid) */}
+      <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-32 auto-rows-[minmax(300px,auto)]">
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            variants={itemVariants}
+            whileHover={{ y: -5 }}
+            className={`
+              relative overflow-hidden rounded-3xl p-8 flex flex-col justify-between
+              bg-card border border-border/50 transition-all duration-300
+              ${project.featured ? "md:col-span-2 lg:col-span-2 min-h-[400px]" : "col-span-1"}
+              ${project.border} hover:shadow-2xl hover:shadow-primary/5
+            `}
+          >
+            {/* Gradient Background Blob */}
+            <div className={`absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-br ${project.gradient} blur-[100px] rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none opacity-50`} />
+
+            <div className="relative z-10">
+              <div className="flex justify-between items-start mb-4">
+                <Badge variant="outline" className="bg-background/50 backdrop-blur-md border-primary/20 text-primary px-3 py-1">
+                  {project.category}
+                </Badge>
+                {project.featured && (
+                  <span className="flex h-3 w-3 relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                  </span>
+                )}
+              </div>
+
+              <h3 className={`font-bold mb-3 text-foreground ${project.featured ? "text-4xl" : "text-2xl"}`}>
+                {project.title}
+              </h3>
+              <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-xl">
+                {project.description}
+              </p>
+            </div>
+
+            <div className="relative z-10 mt-8 space-y-6">
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag, i) => (
+                  <span key={i} className="text-xs font-medium px-2.5 py-1 rounded-md bg-muted/50 text-muted-foreground border border-border/50">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-border/50">
+                {project.link && (
+                  <Button asChild className="rounded-full font-semibold shadow-lg shadow-primary/20">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      {project.linkText || "View Project"} <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </Button>
+                )}
+                {project.github && (
+                  <Button asChild variant="ghost" className="rounded-full hover:bg-muted font-medium">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      <Github className="h-4 w-4" /> Source Code
+                    </a>
+                  </Button>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Tech Arsenal Section */}
+      <motion.div variants={itemVariants}>
+        <div className="flex items-center gap-3 mb-12">
+          <Layers className="text-primary h-8 w-8" />
+          <h2 className="text-3xl font-bold text-foreground">Technical Arsenal</h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {techStackSections.map((section, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="group hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl border-border"
+              variants={itemVariants}
+              whileHover={{ scale: 1.02 }}
+              className="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-colors group"
             >
-              <CardHeader className="flex flex-row items-center space-y-0 gap-4 pb-2">
-                <div className="bg-primary/20 text-primary p-3 rounded-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    {index % 6 === 0 && (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    )}
-                    {index % 6 === 1 && (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                      />
-                    )}
-                    {index % 6 === 2 && (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    )}
-                    {index % 6 === 3 && (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M13 5.5a4 4 0 00-4 4v6a4 4 0 004 4v0"
-                      />
-                    )}
-                    {index % 6 === 4 && (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 4.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                      />
-                    )}
-                    {index % 6 === 5 && (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                    )}
-                  </svg>
+              <div className="flex items-start justify-between mb-4">
+                <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
+                  {getTechIcon(index)}
                 </div>
-                <CardTitle className="text-xl font-semibold text-foreground">
-                  {section.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-muted-foreground">
-                  {section.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start text-sm">
-                      <svg
-                        className="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span className="flex-grow">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+                <span className="text-xs font-mono text-muted-foreground bg-muted px-2 py-1 rounded">
+                  0{index + 1}
+                </span>
+              </div>
+
+              <h3 className="font-bold text-lg mb-4 text-foreground">{section.title}</h3>
+
+              <div className="flex flex-wrap gap-2">
+                {section.items.map((item, i) => (
+                  // Splitting combined items if they exist as comma-separated
+                  item.split(',').map((subItem, subI) => (
+                    <span key={`${i}-${subI}`} className="text-xs px-2 py-1 rounded bg-muted/50 text-muted-foreground hover:text-foreground transition-colors cursor-default">
+                      {subItem.trim()}
+                    </span>
+                  ))
+                ))}
+              </div>
+            </motion.div>
           ))}
         </div>
-        <div className="mt-12">
-          <h2 className="text-4xl md:text-3xl font-bold text-foreground mb-4 leading-tight">
-            Project Showcase
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mb-6">
-            This section is intended to showcase my latest projects. However,
-            due to time constraints, I’m currently featuring two of my older &
-            recent projects that are published on Vercel.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "Mint Supply Company – E-Commerce Platform",
-                description:
-                  "Delivered a modern, mobile-responsive e-commerce platform with scalable architecture, SEO optimization, and dynamic product integration. Built with React, Next.js, Tailwind, and Supabase.",
-                link: "https://mintsupplycompany.com",
-                linkText: "Visit Site",
-                github: "",
-              },
-              {
-                title: "DevSoftPh",
-                description: "Specifically for DevSoftPh Interview",
-                link: "https://softdev-six.vercel.app/",
-                github: "",
-              },
-              {
-                title: "Backend: Marketplace",
-                description:
-                  "A secure, scalable backend built with Node.js, Express, and MongoDB.",
-                link: "https://github.com/dev-rygar/Marketplace",
-                github: "https://github.com/dev-rygar/Marketplace",
-              },
-              {
-                title: "Marketplace",
-                description:
-                  "This is where I have used the backend: Marketplace, I haven't maintend this and it requires the account details I have made to use.",
-                link: "https://marketplace-garry-wheat.vercel.app/",
-                github: "https://github.com/dev-rygar/Marketplace",
-              },
-              {
-                title: "Owtentik",
-                description:
-                  "UX/UI Design Project of mine that showcase similar process with AGILE DEVELOPMENT.",
-                link: "https://www.figma.com/design/s0POc9jM6zZXp62X8qJU5V/Awtentik%2FOwtentik-App?node-id=0-1&t=bydz8MM30kwcJbvG-1",
-                github:
-                  "https://www.figma.com/design/s0POc9jM6zZXp62X8qJU5V/Awtentik%2FOwtentik-App?node-id=0-1&t=bydz8MM30kwcJbvG-1",
-              },
-              // Add more projects as needed
-            ].map((project, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-lg transition-shadow border-border"
-              >
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-foreground">
-                    {project.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{project.description}</p>
-                </CardContent>
-                <CardFooter className="flex space-x-4">
-                  {project.link && (
-                    <Button asChild className="bg-primary hover:bg-primary/90">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {project.linkText || "Live Demo"}
-                      </a>
-                    </Button>
-                  )}
-                  {project.github && (
-                    <Button
-                      asChild
-                      variant="outline"
-                      className="border-primary text-primary hover:bg-accent"
-                    >
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        GitHub
-                      </a>
-                    </Button>
-                  )}
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </div>
-    </PageTransition>
+      </motion.div>
+    </motion.div>
   );
 }

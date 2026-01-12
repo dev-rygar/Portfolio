@@ -69,6 +69,22 @@ export const techStackSections: TechCategory[] = [
 
 export const workExperiences: WorkExperience[] = [
   {
+    title: "Frontend Developer | RL WEB CORP",
+    period: "Oct 2025 - Present",
+    mainBullets: [
+      "Developed SPA Architecture & Performance: Built a highly interactive single-page application using modern React patterns, implementing list virtualization (React Window) and lazy loading to efficiently render large datasets without performance degradation.",
+      "Implemented Security & Access Control (RBAC): Applied robust client-side route guards and permission-based rendering (e.g., view-only modes) to enforce Role-Based Access Control, restricting features based on user roles.",
+      "Designed State Management Architecture: Developed a scalable global state system (using Zustand) to manage cross-cutting concerns such as form drafts, filter states, and user sessions without prop drilling.",
+      "Integrated Data Synchronization & Caching: Connected the UI with backend APIs using React Query (TanStack Query), leveraging optimistic updates, background refetching, and URL-based state synchronization for a responsive, always-fresh experience.",
+    ],
+    additionalBullets: [
+      "Engineered Advanced Interactive Modules: Created a library of custom React hooks to abstract complex frontend logic, ensuring consistent behavior across multiple interactive views and dashboards.",
+      "Created Complex Forms & Validation: Built multi-step forms using schema-driven validation (Zod/React Hook Form), handling client-side validation for intricate input rules.",
+      "Built Dynamic Dashboards & Modules: Developed interactive dashboards and client-side modules that consume backend data, including features for filtering, grouping, and reorganizing information across different views.",
+      "Built Design System & Theming: Developed reusable, accessible UI components with dynamic theming (e.g., dark mode), ensuring design consistency and accessibility compliance across the platform.",
+    ],
+  },
+  {
     title: "Amazon VA – Product Researcher (with IT & Development Support) | Freelance",
     period: "Feb 2025 – Aug 2025",
     mainBullets: [

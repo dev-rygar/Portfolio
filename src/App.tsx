@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import "./index.css";
 import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Lazy load components
 const Home = lazy(() => import("./pages/Home"));
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <div>
         <Navbar />
         <Suspense
