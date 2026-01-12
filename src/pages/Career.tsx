@@ -4,7 +4,7 @@ import { educationItems, certificationItems } from "../data/data";
 import CertificateGallery from "../components/CertificateGallery";
 import { CertificateItem } from "../data/certificateConfig";
 import { Button } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
+import { Button } from "../components/ui/button";
 import SEO from "../components/SEO";
 import { motion, AnimatePresence } from "framer-motion";
 import {
