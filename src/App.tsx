@@ -5,6 +5,7 @@ import "./index.css";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import Floater from "./components/Floater";
+import Footer from "./components/Footer";
 
 // Lazy load components
 const Home = lazy(() => import("./pages/Home"));
@@ -38,6 +39,7 @@ function App() {
             </Routes>
           </AnimatePresence>
         </Suspense>
+        <Footer />
       </div>
     </>
   );
