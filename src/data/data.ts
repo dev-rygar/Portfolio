@@ -14,22 +14,22 @@ export const techStackSections: TechCategory[] = [
   {
     title: "Frontend",
     items: [
-      "React.js, JavaScript (ES6+), TypeScript, HTML5, CSS3",
+      "React.js, Next.js, React Native, JavaScript (ES6+), TypeScript, HTML5, CSS3",
       "TailwindCSS, Bootstrap, Shadcn UI",
     ],
   },
   {
-    title: "State Management",
+    title: "State Management & Hooks",
     items: [
-      "React Hooks (useState, useEffect, useCallback, useContext)",
-      "Context API, Redux",
+      "useState, useEffect, useMemo, useCallback, useRef, useContext Custom & 3rd Party Hooks: useQuery (React Query), useStore (Zustand), useForm (React Hook Form), useParams/useNavigate (React Router)",
+      "Redux",
     ],
   },
   {
     title: "Backend",
     items: [
-      "Node.js, Express.js, MongoDB, Firebase, REST APIs",
-      "SQL (MySQL, PostgreSQL)",
+      "Node.js, Express.js, Nest.js, MongoDB, Firebase, REST APIs",
+      "MySQL, PostgreSQL, Supabase",
     ],
   },
   {
@@ -62,7 +62,7 @@ export const techStackSections: TechCategory[] = [
     items: [
       "E-commerce & CMS: WordPress",
       "Automation & Productivity: Airtable Forms, Google Workspace, Microsoft 365",
-      "Social Media & Content Management: Facebook Business Suite, Instagram, Canva, Adobe Photoshop",
+      "Social Media & Content Management: Facebook Business Suite, Instagram, Canva",
     ],
   },
 ];

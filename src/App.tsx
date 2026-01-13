@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import "./index.css";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
+import Floater from "./components/Floater";
 
 // Lazy load components
 const Home = lazy(() => import("./pages/Home"));
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <Floater />
       <div>
         <Navbar />
         <Suspense

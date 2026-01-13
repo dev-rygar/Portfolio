@@ -73,7 +73,7 @@ export default function Career() {
           <span className="w-8 h-[2px] bg-primary"></span>
           Professional Journey
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground max-w-4xl leading-tight">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground max-w-4xl leading-tight">
           Crafting code, driving innovation, & <br className="hidden md:block" />
           <span className="text-primary">
             shaping solutions.

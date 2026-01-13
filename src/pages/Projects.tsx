@@ -112,7 +112,7 @@ export default function Projects() {
           <span className="w-8 h-[2px] bg-primary"></span>
           Project Portfolio
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground max-w-4xl">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground max-w-4xl">
           Turning complex problems into <br className="hidden md:block" />
           <span className="text-primary">
             elegant solutions.
