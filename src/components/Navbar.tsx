@@ -7,6 +7,7 @@ export default function Navbar() {
     { label: "About", href: "/about" },
     { label: "Experience", href: "/experience" },
     { label: "Projects", href: "/projects" },
+    { label: "Services", href: "/services" },
   ];
 
   return (

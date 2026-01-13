@@ -12,6 +12,8 @@ const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Career = lazy(() => import("./pages/Career"));
 const Projects = lazy(() => import("./pages/Projects"));
+const Services = lazy(() => import("./pages/Services"));
+
 
 function App() {
   const location = useLocation();
@@ -35,6 +37,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/experience" element={<Career />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/services" element={<Services />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </AnimatePresence>
